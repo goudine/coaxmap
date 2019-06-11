@@ -109,7 +109,7 @@ class App extends Component {
     const pngCoords = getPngCoords(e.latlng);
     console.log("lt/ln value is: ", pngCoords);
     markers.push({ ...marker, ...pngCoords });
-    //let pixelVal = getPixelVal(this.state.curOverlay, pngCoords);
+    let pixelVal = getPixelVal(this.state.curOverlay, pngCoords);
     this.setState({
       markers,
       droppingPin: false
