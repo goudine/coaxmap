@@ -29,7 +29,7 @@ class CoaxMap extends Component {
         loading={this.props.loading}
       />
     );
-    console.log("wwoww: ",azureMapsKey);
+    console.log("wwoww: ", azureMapsKey);
     return (
       <Map
         // mousemove={e => this.mouseMove(e)}
@@ -47,19 +47,15 @@ class CoaxMap extends Component {
       >
         {/* <SliderControl left={left} right={right} /> */}
         <TileLayer
-         attribution='&amp;copy 1992 - 2020 TomTom'
-         url="https://atlas.microsoft.com/map/tile?subscription-key={subscriptionKey}&api-version=2.0&zoom={z}&x={x}&y={y}&tileSize=256&tilesetId={tilesetId}&language={language}&view={view}"
-         id="azure.satellite"
-         subscriptionKey= {azureMapsKey}
-         tilesetId= "microsoft.imagery"
-         language = "en-US"
-         view = "Auto"
+          attribution="&amp;copy 1992 - 2020 TomTom"
+          url="https://atlas.microsoft.com/map/tile?subscription-key={subscriptionKey}&api-version=2.0&zoom={z}&x={x}&y={y}&tileSize=256&tilesetId={tilesetId}&language={language}&view={view}"
+          id="azure.satellite"
+          subscriptionKey={azureMapsKey}
+          tilesetId="microsoft.imagery"
+          language="en-US"
+          view="Auto"
         />
-<<<<<<< HEAD
-=======
 
-
->>>>>>> master
         <ScaleControl imperial={false} maxWidth={200} />
         {/* {this.props.displayChlor && left} */}
         {this.props.markers.map((position, idx) => (
