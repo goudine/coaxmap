@@ -1,19 +1,33 @@
-import React, { Component } from "react";
+import React, { useEffect, Component } from "react";
 import {
   Map,
+  MapControl,
   TileLayer,
   ScaleControl,
   ImageOverlay,
   Marker,
-  Popup
+  Popup,
 } from "react-leaflet";
 import { mapboxAccessToken } from "../mapboxAccessToken.json";
+import SliderControl from "./SliderControl";
+import Chlorophyll from "./Overlays";
 
 class CoaxMap extends Component {
-  onViewportChanged = viewport => {};
+  onViewportChanged = (viewport) => {};
 
   render() {
-    console.log("wwoww");
+    const left = (
+      <Chlorophyll
+        curOverlay={this.props.curOverlay}
+        loading={this.props.loading}
+      />
+    );
+    const right = (
+      <Chlorophyll
+        curOverlay={this.props.curOverlay}
+        loading={this.props.loading}
+      />
+    );
     return (
       <Map
         // mousemove={e => this.mouseMove(e)}
@@ -25,37 +39,19 @@ class CoaxMap extends Component {
         minZoom={6}
         maxBounds={[
           [44.887012, -111.137695], // southwest corner
-          [59.92199, -144.624023] // northeast corner
+          [59.92199, -144.624023], // northeast corner
         ]}
         style={{ cursor: this.props.pointer }}
       >
+        {/* <SliderControl left={left} right={right} /> */}
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}"
           id="mapbox.satellite"
           accessToken={mapboxAccessToken}
         />
-
         <ScaleControl imperial={false} maxWidth={200} />
-        {this.props.displayChlor && (
-          <ImageOverlay
-            bounds={[[59.5, -139.001], [47.001, -121.502]]}
-            url={
-              this.props.curOverlay
-              // <img src={this.props.curOverlay} onLoad={this.props.loading} />
-              // <MapImg
-              //   imageURL={this.props.curOverlay}
-              //   onLoad={this.props.loading}
-              // />
-            }
-            opacity={0.9}
-            onLoad={this.props.loading}
-            onAdd={() => {
-              console.log("wheee add! this is the fastest one");
-            }}
-          />
-        )}
-
+        {/* {this.props.displayChlor && left} */}
         {this.props.markers.map((position, idx) => (
           <Marker key={`marker-${idx}`} position={position}>
             <Popup>
