@@ -15,6 +15,7 @@ package-lock.json
 
 # The mapbox access token
 /src/mapboxAccessToken.json
+/src/azureMapsKey.json
 
 # images can go separately
 /public/overlays/**

@@ -8,9 +8,10 @@ import {
   Marker,
   Popup,
 } from "react-leaflet";
-import { mapboxAccessToken } from "../mapboxAccessToken.json";
+
 import SliderControl from "./SliderControl";
 import Chlorophyll from "./Overlays";
+import { azureMapsKey } from "../azureMapsKey.json";
 
 class CoaxMap extends Component {
   onViewportChanged = (viewport) => {};
@@ -28,6 +29,7 @@ class CoaxMap extends Component {
         loading={this.props.loading}
       />
     );
+    console.log("wwoww: ",azureMapsKey);
     return (
       <Map
         // mousemove={e => this.mouseMove(e)}
@@ -45,11 +47,19 @@ class CoaxMap extends Component {
       >
         {/* <SliderControl left={left} right={right} /> */}
         <TileLayer
-          attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}"
-          id="mapbox.satellite"
-          accessToken={mapboxAccessToken}
+         attribution='&amp;copy 1992 - 2020 TomTom'
+         url="https://atlas.microsoft.com/map/tile?subscription-key={subscriptionKey}&api-version=2.0&zoom={z}&x={x}&y={y}&tileSize=256&tilesetId={tilesetId}&language={language}&view={view}"
+         id="azure.satellite"
+         subscriptionKey= {azureMapsKey}
+         tilesetId= "microsoft.imagery"
+         language = "en-US"
+         view = "Auto"
         />
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
         <ScaleControl imperial={false} maxWidth={200} />
         {/* {this.props.displayChlor && left} */}
         {this.props.markers.map((position, idx) => (
