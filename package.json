@@ -27,7 +27,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http:206.12.92.18",
+  "proxy": "http://206.12.92.18",
   "homepage": "/",
   "browserslist": {
     "production": [
