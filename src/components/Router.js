@@ -6,7 +6,7 @@ import App from "./App";
 const Router = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path="/p3aqua/" component={App} />
+      <Route exact path="/" component={App} />
       <Route component={NotFound} />
     </Switch>
   </BrowserRouter>

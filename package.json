@@ -27,8 +27,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://qvirt.com",
-  "homepage": "/p3aqua/",
+  "proxy": "http:206.12.92.18",
+  "homepage": "/",
   "browserslist": {
     "production": [
       ">0.2%",

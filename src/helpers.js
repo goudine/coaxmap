@@ -84,7 +84,7 @@ export function getImgPath(date) {
   let d = date.getDate().toString();
   d.length === 1 && (d = "0" + d);
   m.length === 1 && (m = "0" + m);
-  return "/p3aqua/OLCI/" + y + "/" + m + "/" + d + "/polymer/overlay.png";
+  return "/OLCI/" + y + "/" + m + "/" + d + "/polymer/overlay.png";
 }
 
 export function findLatestDate(dateList) {
