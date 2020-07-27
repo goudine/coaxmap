@@ -6,7 +6,7 @@ const ColorBar = props => (
       <i className="fas fa-info-circle" />
     </div>
     <img
-      src="/p3aqua/images/chl_colorbar.png"
+      src="/images/chl_colorbar.png"
       alt="Color Scale"
       className="colorscale"
     />

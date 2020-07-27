@@ -58,7 +58,7 @@ class App extends Component {
   componentDidMount() {
     // gets the latest list of dates
     console.log("mounty");
-    fetch("/p3aqua/OLCI/curDates.txt")
+    fetch("/OLCI/curDates.txt")
       .then(res => res.text())
       .then(
         result => {

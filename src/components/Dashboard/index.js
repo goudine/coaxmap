@@ -22,7 +22,7 @@ const Dashboard = props => (
           >
             <img
               className="logo"
-              src="/p3aqua/images/modsquad_light.png"
+              src="/images/modsquad_light.png"
               alt="MOD Squad Lab Logo"
             />
           </a>
